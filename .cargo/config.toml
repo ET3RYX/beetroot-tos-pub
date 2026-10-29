@@ -1,0 +1,11 @@
+[build]
+target = "riscv64gc-unknown-none-elf"
+
+[target.riscv64gc-unknown-none-elf]
+rustflags = [
+    "-C", "link-arg=-Tlinker/riscv64-virt.ld",
+]
+
+[unstable]
+# Keep build stable-compatible where possible
+

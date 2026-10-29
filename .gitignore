@@ -1,0 +1,17 @@
+# Rust build artifacts
+target/
+**/*.rs.bk
+*.pdb
+
+# Operating system metadata
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor & IDE configurations
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+

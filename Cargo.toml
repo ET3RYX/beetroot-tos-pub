@@ -1,0 +1,19 @@
+[package]
+name = "beetroot-os"
+version = "0.1.0"
+edition = "2021"
+authors = ["BeetrootOS Contributors"]
+description = "A teaching-grade Unix-like monolithic operating system kernel for RV64 written in Rust"
+readme = "README.md"
+
+[dependencies]
+
+[profile.dev]
+panic = "abort"
+opt-level = 1
+
+[profile.release]
+panic = "abort"
+lto = true
+opt-level = 3
+
