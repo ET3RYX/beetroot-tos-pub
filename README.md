@@ -6,23 +6,6 @@ BeetrootOS is an educational operating system designed to explore operating-syst
 
 ---
 
-## 1. Verified Implementation Status
-
-| Milestone | Subsystem | Implementation Status | Runtime Verification |
-|---|---|---|---|
-| **Milestone 1** | Build & Toolchain Infrastructure | Complete | **Verified:** Stable Rust 1.95 (`riscv64gc-unknown-none-elf`) + `rust-lld` links ELF at `0x8020_0000` |
-| **Milestone 2** | Boot & Early Kernel | Complete | **Verified:** `_start` sets 64 KiB stack, zeroes BSS, preserves `a0`/`a1`, enters `rust_main()` |
-| **Milestone 3** | Console & Diagnostics | Complete | **Verified:** 16550A UART MMIO driver (`0x1000_0000`), `print!`/`println!` macros, diagnostic panic handler |
-| **Milestone 4** | RISC-V Architecture Layer | *Planned* | S-mode CSR wrappers, trap vector (`stvec`), `TrapFrame`, exception dispatch |
-| **Milestone 5** | Physical Memory Management | *Planned* | DRAM memory map discovery, 4 KiB frame allocator |
-| **Milestone 6** | Virtual Memory | *Planned* | Sv39 3-level page tables, kernel direct map, MMU enablement |
-| **Milestone 7** | Scheduling & Execution Contexts | *Planned* | Kernel stacks, TCB structures, cooperative context switching |
-| **Milestone 8** | User Mode & System Calls | *Planned* | Isolated user address space, privilege transition (`sret`), syscall dispatch |
-| **Milestone 9** | Processes & Preemptive I/O | *Planned* | Process lifecycle (`fork`/`exec`), timer interrupts, blocking UART input |
-| **Milestone 10**| Filesystem & User Programs | *Planned* | Minimal filesystem, executable loading, simple user shell |
-
----
-
 ## 2. Hardware & Boot Model
 
 - **Architecture:** 64-bit RISC-V (`RV64GC` — integer, multiply/divide, atomics, single/double float, compressed instructions).
